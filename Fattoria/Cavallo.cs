@@ -8,8 +8,8 @@ namespace Fattoria
 {
     internal class Cavallo : Quadrupede
     {
-        public Cavallo()
-        {
-        }
-    }
+		public Cavallo(string nome, bool pasto) : base(nome, pasto)
+		{
+		}
+	}
 }

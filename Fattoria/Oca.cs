@@ -8,8 +8,8 @@ namespace Fattoria
 {
     internal class Oca : Bipede
     {
-        public Oca()
-        {
-        }
-    }
+		public Oca(string nome, bool pasto) : base(nome, pasto)
+		{
+		}
+	}
 }

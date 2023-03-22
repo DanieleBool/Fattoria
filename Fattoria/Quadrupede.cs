@@ -8,7 +8,7 @@ namespace Fattoria
 {
     internal class Quadrupede : Animale
     {
-		public string zampe = "4";
+		public const string zampe = "4";
 
         public Quadrupede(string nome, bool pasto) : base(nome, pasto)
         {

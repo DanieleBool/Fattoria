@@ -9,7 +9,7 @@ namespace Fattoria;
 
 internal class Bipede : Animale
 {
-    private static string zampe = "2";
+    private const string zampe = "2";
 
     public Bipede(string nome, bool pasto) : base(nome, pasto)
     {

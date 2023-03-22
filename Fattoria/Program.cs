@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq.Expressions;
 using Fattoria;
 
 Console.WriteLine("Hello, World!");
@@ -26,48 +28,77 @@ foreach (Animale animale in animali)
 	animale.look();
 };
 
+//Console.WriteLine("Enter category:");
+//string newCat;
+//newCat = Console.ReadLine();
+//const categorie = new string[] {"Oca","Maiale","Cavallo","Gallina"};
+////if (list.Contains(answer))
+//    if (categorie.Any(newCat.Equals))
+//{
+//	Console.WriteLine("non è la categoria giusta");
+//}
+////else {
+////    string? Value = null;
+////    newCat = Value;
+////}
+
+//Console.WriteLine("Enter name:");
+//string newPet;
+//newPet = Console.ReadLine();
+
+//if (newPet == null) 
+//{ 
+//	Console.WriteLine("non hai scritto");
+//}
+//else 
+//{
+//	animali.Add(newPet);
+//	animali.pasto;
+//};
+
+//Console.WriteLine("Hai scritto: " + newPet);
+
+
 Console.WriteLine("Enter category:");
 string newCat;
 newCat = Console.ReadLine();
-var categorie = new string[] {"Oca","Maiale","Cavallo","Gallina"};
-//if (list.Contains(answer))
-    if (categorie.Any(newCat.Equals))
-{
-	Console.WriteLine("non è la categoria giusta");
-}
-//else {
-//    string? Value = null;
-//    newCat = Value;
-//}
 
 Console.WriteLine("Enter name:");
-string newPet;
-newPet = Console.ReadLine();
+string input;
+input = Console.ReadLine();
+Animale newPet = null;
 
-if (newPet == null) 
-{ 
-	Console.WriteLine("non hai scritto");
-}
-else 
+bool feed;
+string cibo;
+Console.WriteLine("hai dato cibo?");
+cibo = Console.ReadLine();
+
+if(cibo == "si")
 {
-	animali.Add(newPet);
-	animali.pasto;
-};
+	feed = true;
+}
+else
+{
+	feed = false;
+}
 
-Console.WriteLine("Hai scritto: " + newPet);
+switch(newCat)
+{
+	case "Maiale":
+		newPet = new Maiale(input, feed);
+		break;
+	case "Oca":
+		newPet = new Oca(input, feed);
+		break;
+	case "Gallina":
+        newPet = new Gallina(input, feed);
+        break;
+	case "Cavallo":
+        newPet = new Cavallo(input, feed);
+        break;
+	default:
+		Console.WriteLine("La categoria non è presente");
+		break;
+}
 
-
-
-//Animale animale2 = new Gallina("ovaia", false);
-//Animale animale3 = new Gallina("lina", false);
-//Animale animale4 = new Gallina("rosita", false);
-//Animale animale5 = new Cavallo("millo", false);
-//Animale animale6 = new Cavallo("rocco", false);
-//Animale animale7 = new Maiale("dino", false);
-//Animale animale8 = new Maiale("ciccio", false);
-//Animale animale9 = new Oca("loca", false);
-//Animale animale10 = new Oca("miseria", false);
-//Animale animale1 = new Maiale("peppa",false);
-
-//Animale.look();
-//devo fare riferimento ad un oggetto
+animali.Add(newPet);

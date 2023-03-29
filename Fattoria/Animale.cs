@@ -11,10 +11,10 @@ namespace Fattoria
     {
         public string Nome { get; set; }
         public bool Pasto { get; set; }
-        public DateTime DataEntrata { get; }
-        public DateTime DataUscita { get; set; }
+        public DateTime DataEntrata { get; set; }
+        public DateTime? DataUscita { get; set; }
 
-        public Animale(string nome, bool pasto, DateTime entryDate, DateTime exitDate)
+        public Animale(string nome, bool pasto, DateTime entryDate, DateTime? exitDate)
         {
             Nome = nome;
             Pasto = pasto;
@@ -24,7 +24,7 @@ namespace Fattoria
 
         public virtual void Look()
         {
-            Console.WriteLine($"Sono un animale di nome {Nome} entrato in data {DataEntrata.ToShortDateString()} e uscito in data {DataUscita.ToShortDateString()}. {(Pasto ? "Ho già mangiato." : "Non ho ancora mangiato.")}");
+            Console.WriteLine($"Sono un animale di nome {Nome} entrato in data {DataEntrata.ToShortDateString()} e uscito in data {DataUscita?.ToShortDateString()}. {(Pasto ? "Ho già mangiato." : "Non ho ancora mangiato.")}");
         }
 
     }

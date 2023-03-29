@@ -11,7 +11,7 @@ internal class Bipede : Animale
 {
     public const string Zampe = "2";
 
-    public Bipede(string nome, bool pasto, DateTime entryDate, DateTime exitDate) : base(nome, pasto, entryDate, exitDate) { }
+    public Bipede(string nome, bool pasto, DateTime entryDate, DateTime? exitDate) : base(nome, pasto, entryDate, exitDate) { }
 }
 //internal class Bipede : Animale
 //{

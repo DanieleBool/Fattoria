@@ -10,7 +10,7 @@ namespace Fattoria
     {
         public const string Zampe = "4";
 
-        public Quadrupede(string nome, bool pasto, DateTime entryDate, DateTime exitDate) : base(nome, pasto, entryDate, exitDate) { }
+        public Quadrupede(string nome, bool pasto, DateTime entryDate, DateTime? exitDate) : base(nome, pasto, entryDate, exitDate) { }
     }
 
     //internal class Quadrupede : Animale
